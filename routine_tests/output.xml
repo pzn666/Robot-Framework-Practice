@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.6.0 on darwin)" generated="20170425 16:33:37.456">
+<suite id="s1" name="Home" source="/Users/pzn666/Documents/RobotFramework/routine_tests/home.robot">
+<test id="s1-t1" name="Open Home Page">
+<kw name="Open Browser To Home Page" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${HOME}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170425 16:33:37.602" level="INFO">Opening browser 'Firefox' to base url 'https://video.ey.gov.tw'</msg>
+<status status="PASS" starttime="20170425 16:33:37.601" endtime="20170425 16:33:46.158"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:33:46.159" endtime="20170425 16:33:46.160"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:33:37.601" endtime="20170425 16:33:46.160"></status>
+</kw>
+<kw name="Home Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>行政院數位影音資料館</arg>
+</arguments>
+<msg timestamp="20170425 16:33:46.170" level="INFO">Page title is '行政院數位影音資料館'.</msg>
+<status status="PASS" starttime="20170425 16:33:46.161" endtime="20170425 16:33:46.170"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:33:46.160" endtime="20170425 16:33:46.170"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20170425 16:33:46.171" endtime="20170425 16:33:46.638"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:33:37.600" endtime="20170425 16:33:46.639" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Video Recent Test">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>https://video.ey.gov.tw</arg>
+</arguments>
+<msg timestamp="20170425 16:33:46.642" level="INFO">Opening url 'https://video.ey.gov.tw'</msg>
+<status status="PASS" starttime="20170425 16:33:46.641" endtime="20170425 16:33:49.627"></status>
+</kw>
+<kw name="Click Link By Attribute" library="Selenium2Library">
+<arguments>
+<arg>href</arg>
+<arg>'#videoRecent'</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:33:49.627" endtime="20170425 16:33:49.777"></status>
+</kw>
+<kw name="Wait Until Element Is Visible By Class" library="Selenium2Library">
+<arguments>
+<arg>div.video</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:33:49.778" endtime="20170425 16:33:49.925"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:33:51.926" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:33:49.925" endtime="20170425 16:33:51.926"></status>
+</kw>
+<kw name="Get All Links Text Or Title From" library="Selenium2Library">
+<doc>Return a list containing texts of all links found in certain element</doc>
+<arguments>
+<arg>xpath=//div[@class='videoRecent page']//div[@class='container']</arg>
+</arguments>
+<assign>
+<var>@{all_links}</var>
+</assign>
+<msg timestamp="20170425 16:33:53.511" level="INFO">@{all_links} = [ 2017年4月15日林揆出席「東南亞僑台商攬才博覽會」 盼結合東南亞、貫徹新南向政策（行政院長林全出席「2017年僑務委員會東南亞僑台商攬才博覽會」） | 2017年4月15日林揆出席「東南亞僑台商攬才博覽會」 盼結合東南亞、貫徹新南向政策（行政院長林全出席「2017年僑務委員會東南亞僑台商攬才博覽會」） | 2017年4月12日紅葉村遷建應兼顧永續安全 並保持其美麗特色（行政院長林全參加「莫...</msg>
+<status status="PASS" starttime="20170425 16:33:51.927" endtime="20170425 16:33:53.511"></status>
+</kw>
+<kw name="${link_text} IN [ @{all_links} ]" type="for">
+<kw name="${link_text} = 2017年4月15日林揆出席「東南亞僑台商攬才博覽會」 盼結合東南亞、貫徹新南向政策（行政院長林全出席「2017年僑務委員會東南亞僑台商攬才博覽會」）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:33:53.512" endtime="20170425 16:33:53.512"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:33:53.512" level="INFO">Clicking link with text '2017年4月15日林揆出席「東南亞僑台商攬才博覽會」 盼結合東南亞、貫徹新南向政策（行政院長林全出席「2017年僑務委員會東南亞僑台商攬才博覽會」）'.</msg>
+<status status="PASS" starttime="20170425 16:33:53.512" endtime="20170425 16:33:53.625"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:33:55.627" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:33:53.625" endtime="20170425 16:33:55.627"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:33:55.628" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:33:55.628" endtime="20170425 16:33:55.663"></status>
+</kw>
+<kw name="Compare Elements Text By Id" library="Selenium2Library">
+<arguments>
+<arg>ivpModalLabel</arg>
+<arg>${link_text}</arg>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:33:55.664" endtime="20170425 16:33:55.722"></status>
+</kw>
+<kw name="Click Element By Class" library="Selenium2Library">
+<doc>Click element by text</doc>
+<arguments>
+<arg>button.close</arg>
+</arguments>
+<msg timestamp="20170425 16:33:55.723" level="INFO">Clicking button with class 'button.close'.</msg>
+<status status="PASS" starttime="20170425 16:33:55.722" endtime="20170425 16:33:55.781"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:33:57.782" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:33:55.781" endtime="20170425 16:33:57.783"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:33:53.512" endtime="20170425 16:33:57.783"></status>
+</kw>
+<kw name="${link_text} = 2017年4月15日林揆出席「東南亞僑台商攬才博覽會」 盼結合東南亞、貫徹新南向政策（行政院長林全出席「2017年僑務委員會東南亞僑台商攬才博覽會」）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:33:57.785" endtime="20170425 16:33:57.786"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:33:57.787" level="INFO">Clicking link with text '2017年4月15日林揆出席「東南亞僑台商攬才博覽會」 盼結合東南亞、貫徹新南向政策（行政院長林全出席「2017年僑務委員會東南亞僑台商攬才博覽會」）'.</msg>
+<status status="PASS" starttime="20170425 16:33:57.786" endtime="20170425 16:33:57.914"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:33:59.916" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:33:57.914" endtime="20170425 16:33:59.916"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:33:59.917" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:33:59.917" endtime="20170425 16:33:59.938"></status>
+</kw>
+<kw name="Compare Elements Text By Id" library="Selenium2Library">
+<arguments>
+<arg>ivpModalLabel</arg>
+<arg>${link_text}</arg>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:33:59.939" endtime="20170425 16:33:59.974"></status>
+</kw>
+<kw name="Click Element By Class" library="Selenium2Library">
+<doc>Click element by text</doc>
+<arguments>
+<arg>button.close</arg>
+</arguments>
+<msg timestamp="20170425 16:33:59.974" level="INFO">Clicking button with class 'button.close'.</msg>
+<status status="PASS" starttime="20170425 16:33:59.974" endtime="20170425 16:34:00.066"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:02.067" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:00.066" endtime="20170425 16:34:02.068"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:33:57.784" endtime="20170425 16:34:02.068"></status>
+</kw>
+<kw name="${link_text} = 2017年4月12日紅葉村遷建應兼顧永續安全 並保持其美麗特色（行政院長林全參加「莫蘭蒂災後延平紅葉部落遷建動土祈福典禮」）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:02.069" endtime="20170425 16:34:02.069"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:34:02.070" level="INFO">Clicking link with text '2017年4月12日紅葉村遷建應兼顧永續安全 並保持其美麗特色（行政院長林全參加「莫蘭蒂災後延平紅葉部落遷建動土祈福典禮」）'.</msg>
+<status status="PASS" starttime="20170425 16:34:02.069" endtime="20170425 16:34:02.203"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:04.204" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:02.203" endtime="20170425 16:34:04.204"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:34:04.205" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:34:04.204" endtime="20170425 16:34:04.247"></status>
+</kw>
+<kw name="Compare Elements Text By Id" library="Selenium2Library">
+<arguments>
+<arg>ivpModalLabel</arg>
+<arg>${link_text}</arg>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:04.247" endtime="20170425 16:34:04.281"></status>
+</kw>
+<kw name="Click Element By Class" library="Selenium2Library">
+<doc>Click element by text</doc>
+<arguments>
+<arg>button.close</arg>
+</arguments>
+<msg timestamp="20170425 16:34:04.281" level="INFO">Clicking button with class 'button.close'.</msg>
+<status status="PASS" starttime="20170425 16:34:04.281" endtime="20170425 16:34:04.331"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:06.333" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:04.331" endtime="20170425 16:34:06.334"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:34:02.069" endtime="20170425 16:34:06.334"></status>
+</kw>
+<kw name="${link_text} = 2017年4月12日紅葉村遷建應兼顧永續安全 並保持其美麗特色（行政院長林全參加「莫蘭蒂災後延平紅葉部落遷建動土祈福典禮」）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:06.335" endtime="20170425 16:34:06.336"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:34:06.337" level="INFO">Clicking link with text '2017年4月12日紅葉村遷建應兼顧永續安全 並保持其美麗特色（行政院長林全參加「莫蘭蒂災後延平紅葉部落遷建動土祈福典禮」）'.</msg>
+<status status="PASS" starttime="20170425 16:34:06.337" endtime="20170425 16:34:06.504"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:08.506" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:06.505" endtime="20170425 16:34:08.506"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:34:08.506" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:34:08.506" endtime="20170425 16:34:08.532"></status>
+</kw>
+<kw name="Compare Elements Text By Id" library="Selenium2Library">
+<arguments>
+<arg>ivpModalLabel</arg>
+<arg>${link_text}</arg>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:08.532" endtime="20170425 16:34:08.564"></status>
+</kw>
+<kw name="Click Element By Class" library="Selenium2Library">
+<doc>Click element by text</doc>
+<arguments>
+<arg>button.close</arg>
+</arguments>
+<msg timestamp="20170425 16:34:08.564" level="INFO">Clicking button with class 'button.close'.</msg>
+<status status="PASS" starttime="20170425 16:34:08.564" endtime="20170425 16:34:08.615"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:10.617" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:08.616" endtime="20170425 16:34:10.618"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:34:06.334" endtime="20170425 16:34:10.618"></status>
+</kw>
+<kw name="${link_text} = 2017年4月13日行政院會後記者會（第3544次會議）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:10.619" endtime="20170425 16:34:10.620"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:34:10.621" level="INFO">Clicking link with text '2017年4月13日行政院會後記者會（第3544次會議）'.</msg>
+<status status="PASS" starttime="20170425 16:34:10.621" endtime="20170425 16:34:10.717"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:12.719" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:10.718" endtime="20170425 16:34:12.719"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:34:12.719" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:34:12.719" endtime="20170425 16:34:12.747"></status>
+</kw>
+<kw name="Compare Elements Text By Id" library="Selenium2Library">
+<arguments>
+<arg>ivpModalLabel</arg>
+<arg>${link_text}</arg>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:12.747" endtime="20170425 16:34:12.782"></status>
+</kw>
+<kw name="Click Element By Class" library="Selenium2Library">
+<doc>Click element by text</doc>
+<arguments>
+<arg>button.close</arg>
+</arguments>
+<msg timestamp="20170425 16:34:12.782" level="INFO">Clicking button with class 'button.close'.</msg>
+<status status="PASS" starttime="20170425 16:34:12.782" endtime="20170425 16:34:12.835"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:14.836" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:12.835" endtime="20170425 16:34:14.836"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:34:10.619" endtime="20170425 16:34:14.836"></status>
+</kw>
+<kw name="${link_text} = 2017年4月13日行政院會後記者會（第3544次會議）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:14.836" endtime="20170425 16:34:14.837"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:34:14.837" level="INFO">Clicking link with text '2017年4月13日行政院會後記者會（第3544次會議）'.</msg>
+<status status="PASS" starttime="20170425 16:34:14.837" endtime="20170425 16:34:14.927"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:16.928" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:14.928" endtime="20170425 16:34:16.928"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:34:16.929" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:34:16.929" endtime="20170425 16:34:16.949"></status>
+</kw>
+<kw name="Compare Elements Text By Id" library="Selenium2Library">
+<arguments>
+<arg>ivpModalLabel</arg>
+<arg>${link_text}</arg>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:16.949" endtime="20170425 16:34:16.979"></status>
+</kw>
+<kw name="Click Element By Class" library="Selenium2Library">
+<doc>Click element by text</doc>
+<arguments>
+<arg>button.close</arg>
+</arguments>
+<msg timestamp="20170425 16:34:16.979" level="INFO">Clicking button with class 'button.close'.</msg>
+<status status="PASS" starttime="20170425 16:34:16.979" endtime="20170425 16:34:17.017"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:19.019" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:17.017" endtime="20170425 16:34:19.019"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:34:14.836" endtime="20170425 16:34:19.019"></status>
+</kw>
+<kw name="${link_text} = 2017年4月12日台東大武愛國蒲部落遷建 林揆期許如質完工早日遷居（行政院長林全參加「莫蘭蒂災後大武愛國蒲部落遷建動土祈福典禮」）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:19.020" endtime="20170425 16:34:19.020"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:34:19.021" level="INFO">Clicking link with text '2017年4月12日台東大武愛國蒲部落遷建 林揆期許如質完工早日遷居（行政院長林全參加「莫蘭蒂災後大武愛國蒲部落遷建動土祈福典禮」）'.</msg>
+<status status="PASS" starttime="20170425 16:34:19.021" endtime="20170425 16:34:19.125"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:21.126" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:19.125" endtime="20170425 16:34:21.127"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:34:21.127" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:34:21.127" endtime="20170425 16:34:21.149"></status>
+</kw>
+<kw name="Compare Elements Text By Id" library="Selenium2Library">
+<arguments>
+<arg>ivpModalLabel</arg>
+<arg>${link_text}</arg>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:21.149" endtime="20170425 16:34:21.181"></status>
+</kw>
+<kw name="Click Element By Class" library="Selenium2Library">
+<doc>Click element by text</doc>
+<arguments>
+<arg>button.close</arg>
+</arguments>
+<msg timestamp="20170425 16:34:21.182" level="INFO">Clicking button with class 'button.close'.</msg>
+<status status="PASS" starttime="20170425 16:34:21.181" endtime="20170425 16:34:21.228"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:23.229" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:21.228" endtime="20170425 16:34:23.229"></status>
+</kw>
+<status status="PASS" starttime="20170425 16:34:19.020" endtime="20170425 16:34:23.229"></status>
+</kw>
+<kw name="${link_text} = 2017年4月12日台東大武愛國蒲部落遷建 林揆期許如質完工早日遷居（行政院長林全參加「莫蘭蒂災後大武愛國蒲部落遷建動土祈福典禮」）" type="foritem">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<status status="PASS" starttime="20170425 16:34:23.230" endtime="20170425 16:34:23.230"></status>
+</kw>
+<kw name="Click Link By Text" library="Selenium2Library">
+<doc>Click link by text</doc>
+<arguments>
+<arg>${link_text}</arg>
+</arguments>
+<msg timestamp="20170425 16:34:23.231" level="INFO">Clicking link with text '2017年4月12日台東大武愛國蒲部落遷建 林揆期許如質完工早日遷居（行政院長林全參加「莫蘭蒂災後大武愛國蒲部落遷建動土祈福典禮」）'.</msg>
+<status status="PASS" starttime="20170425 16:34:23.230" endtime="20170425 16:34:23.326"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20170425 16:34:25.327" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20170425 16:34:23.326" endtime="20170425 16:34:25.327"></status>
+</kw>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>css=div.modal-dialog.modal-lg</arg>
+</arguments>
+<msg timestamp="20170425 16:34:25.328" level="INFO">Verifying element 'css=div.modal-dialog.modal-lg' is visible.</msg>
+<status status="PASS" starttime="20170425 16:34:25.327" endtime="20170425 16:34:25.346">
